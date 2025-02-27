@@ -80,7 +80,7 @@ components. In this specific case: */
       {cards.map((card, index) => (
         <div
           key={card.id}
-          className={`card bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer ${
+          className={`card rounded-lg flex items-center justify-center cursor-pointer ${
             card.flipped ? "flipped" : ""
           }`}
           onClick={() => handleCardClick(index)}

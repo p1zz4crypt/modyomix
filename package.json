@@ -2,7 +2,7 @@
   "name": "modyo-mix",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://p1zz4crypt.github.io/modyomix", // Mover esta línea aquí
+  "homepage": "https://p1zz4crypt.github.io/modyomix", 
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

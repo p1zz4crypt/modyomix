@@ -13,6 +13,48 @@ Pruébalo aquí:
 
 ---
 
+## **Proceso de Desarrollo**
+
+### **Planeación y Organización**
+Antes de comenzar a codificar, realicé una planeación detallada del proyecto en **Notion**. Esta herramienta me permitió organizar las tareas, definir los requisitos y establecer un cronograma para el desarrollo. Aquí hay una captura de pantalla de mi tablero de planeación:
+
+![Planeación en Notion](./src/images/modyo-figma.png)
+
+### **Pasos Seguidos**
+1. **Análisis del Requerimiento**:
+   - Leí y comprendí los requisitos del proyecto, identificando las funcionalidades clave (juego de memoria, temporizador, persistencia del nombre, etc.).
+   - Definí los componentes principales: `Header`, `Board`, `Modal`, `StartModal`.
+
+2. **Diseño de la Interfaz**:
+   - Decidí usar **Bootstrap** y  para los estilos.
+
+3. **Desarrollo del Código**:
+   - Implementé la lógica del juego en React, utilizando estados y efectos para manejar el flujo del juego.
+   - Integré la API de animales para obtener las imágenes de las cartas.
+   - Añadí un temporizador y un sistema de persistencia del nombre usando `localStorage`.
+
+4. **Pruebas y Depuración**:
+   - Realicé pruebas manuales para asegurarme de que todas las funcionalidades funcionaran correctamente.
+   - Corregí errores relacionados con el volteo de cartas y la persistencia del nombre.
+
+5. **Despliegue**:
+   - Configuré GitHub Pages para desplegar la aplicación.
+   - Aseguré que el enlace de despliegue funcionara correctamente.
+
+### **Herramientas Utilizadas**
+- **Notion**: Para la planeación y organización del proyecto.
+- **React**: Para el desarrollo de la lógica y los componentes.
+- **Bootstrap**: Para los estilos y el diseño responsivo.
+- **GitHub Pages**: Para el despliegue de la aplicación.
+
+---
+
+### **Planeación en Notion**
+![Planeación en Notion](./screenshots/notion-planning.png)
+
+
+---
+
 ## **Funcionalidades Principales**
 
 1. **Modal de Inicio**:

@@ -1,5 +1,3 @@
-/* This code snippet is a React component called `Board` that represents a memory card game. Here's a
-breakdown of what the code does: */
 import React, { useState, useEffect } from "react";
 import { getAnimals } from "../services/api";
 
@@ -7,9 +5,8 @@ const Board = ({ setMatches, setErrors }) => {
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
 
-
-/* The `useEffect` hook in the `Board` component is used to perform side effects in function
-components. In this specific case: */
+/* The `useEffect` hook in the provided code snippet is responsible for initializing the game board
+when the component mounts. Here's a breakdown of what it does: */
   useEffect(() => {
     const initializeGame = async () => {
       const animalImages = await getAnimals();
@@ -26,7 +23,6 @@ components. In this specific case: */
     initializeGame();
   }, []);
 
-
 /**
  * The `shuffleArray` function shuffles the elements of an array randomly.
  * @returns The `shuffleArray` function is returning the input array after it has been shuffled
@@ -36,10 +32,9 @@ components. In this specific case: */
     return array.sort(() => Math.random() - 0.5);
   };
 
-
 /**
- * The function `handleCardClick` in a React component allows flipping cards and checking for matches
- * when two cards are flipped.
+ * The function `handleCardClick` flips a card in a memory card game and checks for a match if two
+ * cards are flipped.
  */
   const handleCardClick = (index) => {
     if (flippedCards.length < 2 && !cards[index].flipped) {
@@ -54,7 +49,6 @@ components. In this specific case: */
     }
   };
 
-
 /**
  * The function `checkForMatch` compares the images of two flipped cards and updates the number of
  * matches or errors accordingly.
@@ -62,9 +56,9 @@ components. In this specific case: */
   const checkForMatch = (index) => {
     const [firstIndex] = flippedCards;
     if (cards[firstIndex].image === cards[index].image) {
-      setMatches((prevMatches) => prevMatches + 1); 
+      setMatches((prevMatches) => prevMatches + 1);
     } else {
-      setErrors((prevErrors) => prevErrors + 1); 
+      setErrors((prevErrors) => prevErrors + 1);
       setTimeout(() => {
         const newCards = [...cards];
         newCards[firstIndex].flipped = false;
@@ -76,27 +70,25 @@ components. In this specific case: */
   };
 
   return (
+    <>
     <div className="board grid grid-cols-4 gap-4 p-4">
       {cards.map((card, index) => (
         <div
           key={card.id}
-          className={`card rounded-lg flex items-center justify-center cursor-pointer ${
-            card.flipped ? "flipped" : ""
-          }`}
+          className={`card ${card.flipped ? "flipped" : ""}`}
           onClick={() => handleCardClick(index)}
         >
-          {card.flipped ? (
-            <img
-              src={card.image}
-              alt="Animal"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          ) : (
-            <div className="card-back w-full h-full bg-blue-300 rounded-lg"></div>
-          )}
+          <div className="card-face card-back"></div>
+          <div className="card-face card-front">
+            <img src={card.image} alt="Animal" className="w-full h-full object-cover rounded-lg" />
+          </div>
         </div>
       ))}
     </div>
+    <div>
+      
+    </div>
+    </>
   );
 };
 

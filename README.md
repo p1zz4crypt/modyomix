@@ -1,70 +1,145 @@
-# Getting Started with Create React App
+# ModyoMix: Juego de Memoria con Animales 🐾
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Bienvenido a **ModyoMix**! Este es un juego de memoria clásico donde tu objetivo es encontrar todos los pares de animales en el menor tiempo posible y con la menor cantidad de errores. ¡Pon a prueba tu memoria y diviértete!
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Descripción del Proyecto**
 
-### `npm start`
+**ModyoMix** es un juego de memoria desarrollado con **React** que utiliza imágenes de animales obtenidas desde una API externa. El juego incluye un temporizador, un contador de aciertos y errores, y un sistema de persistencia del nombre del jugador usando `localStorage`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **Funcionalidades Principales**
 
-### `npm test`
+1. **Modal de Inicio**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Solicita el nombre del jugador al iniciar el juego.
+   - Muestra un mensaje de bienvenida con un efecto de texto animado.
 
-### `npm run build`
+2. **Tablero de Juego**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Muestra un conjunto de cartas boca abajo con imágenes de animales.
+   - Las imágenes se obtienen de una API externa.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Mecánica del Juego**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - El jugador debe voltear dos cartas por turno.
+   - Si las cartas coinciden, se suman **aciertos**.
+   - Si no coinciden, se suman **errores** y las cartas se voltean de nuevo.
 
-### `npm run eject`
+4. **Contador de Tiempo**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   - Un temporizador mide cuánto tiempo tarda el jugador en completar el juego.
+   - El tiempo se muestra en el header y en el mensaje de felicitación al final.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Diseño Responsivo**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   - El juego se adapta a diferentes tamaños de pantalla (móvil, tablet, escritorio).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. **Modal de Felicitación**:
 
-## Learn More
+   - Cuando el jugador encuentra todos los pares, se muestra un modal con un mensaje de felicitación, el tiempo final y la opción de jugar de nuevo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+7. **Persistencia del Nombre**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   - El nombre del jugador se guarda en `localStorage` para que no se solicite nuevamente al recargar la página.
 
-### Code Splitting
+8. **Efecto de Flip en las Cartas**:
+   - Las cartas tienen un efecto de volteo suave y realista.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## **Tecnologías Utilizadas**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Frontend**:
+  - React (para la lógica del juego y componentes).
+  - TailwindCSS y Bootstrap 5 (para estilos y diseño responsivo).
+- **API**:
+  - [Modyo Animals API](https://fed-team.modyo.cloud/api/content/spaces/animals/types/game/entries?per_page=20) (para obtener imágenes de animales).
+- **Herramientas**:
+  - ESLint y Prettier (para mantener el código limpio y bien formateado).
+  - Git (para el control de versiones).
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## **Cómo Jugar**
 
-### Advanced Configuration
+Sigue estos pasos para jugar:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Ingresa tu Nombre**:
 
-### Deployment
+   - Al iniciar el juego, se te pedirá que ingreses tu nombre. Este nombre se mostrará durante el juego y en el mensaje de felicitación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. **Voltea las Cartas**:
 
-### `npm run build` fails to minify
+   - Haz clic en dos cartas para voltearlas.
+   - Si las cartas coinciden, quedarán boca arriba.
+   - Si no coinciden, se voltearán de nuevo después de un breve momento.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. **Encuentra Todos los Pares**:
+
+   - Sigue volteando cartas hasta que encuentres todos los pares de animales.
+
+4. **Completa el Juego**:
+   - Cuando encuentres todos los pares, se mostrará un mensaje de felicitación con tu tiempo final.
+   - Puedes reiniciar el juego haciendo clic en "¡Otra vez!".
+
+---
+
+## **Instalación y Ejecución**
+
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+
+1. **Clona el Repositorio**:
+
+   ```bash
+   git clone https://github.com/tu-usuario/modyomix.git
+   cd modyomix
+
+   ```
+
+2. **Instala las dependencias**:
+
+```bash
+npm install
+```
+
+3. **Ejecuta el proyecto**:
+```bash
+npm start
+```
+
+
+
+---
+
+## **Mejoras Futuras**
+
+- **Guardar Mejores Tiempos**: Implementar un sistema para guardar los mejores tiempos de los jugadores.
+- **Dificultades**: Añadir niveles de dificultad (más cartas, menos tiempo, etc.).
+- **Sonidos**: Incorporar efectos de sonido al voltear cartas y al ganar.
+- **Animaciones**: Mejorar las animaciones de volteo de cartas y transiciones.
+
+---
+
+## **Contribuciones**
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar el proyecto, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una rama con tu nueva funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -m "Añade nueva funcionalidad"`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+---
+
+## **Licencia**
+
+Este proyecto está bajo la licencia **MIT**. Para más detalles, consulta el archivo [LICENSE](./LICENSE).
+
+---
+
+¡Gracias por jugar **ModyoMix**! 🎉  
+Desarrollado con ❤️ por [Adriana Rosas](https://github.com/tu-usuario).

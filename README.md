@@ -2,6 +2,9 @@
 
 ¡Bienvenido a **ModyoMix**! Este es un juego de memoria clásico donde tu objetivo es encontrar todos los pares de animales en el menor tiempo posible y con la menor cantidad de errores. ¡Pon a prueba tu memoria y diviértete!
 
+Pruébalo aquí:
+[ModyoMix](https://p1zz4crypt.github.io/modyomix/)
+
 ---
 
 ## **Descripción del Proyecto**

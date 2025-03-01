@@ -49,12 +49,6 @@ Antes de comenzar a codificar, realicé una planeación detallada del proyecto e
 
 ---
 
-### **Planeación en Notion**
-![Planeación en Notion](./screenshots/notion-planning.png)
-
-
----
-
 ## **Funcionalidades Principales**
 
 1. **Modal de Inicio**:

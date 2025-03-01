@@ -1,10 +1,10 @@
 /**
- * The `App` function in this React component manages the game state, player interactions, timer, and
- * rendering of components for a memory matching game.
+ * The App component in this React application manages the game state, player information, timer, and
+ * rendering of components like Board, Header, Modal, and StartModal.
  * @returns The `App` component is being returned, which contains the structure of the application
- * including the header, board, start modal, footer, and game over modal. The content displayed depends
- * on the state values such as `isStartModalOpen`, `gameOver`, and the game variables like
- * `playerName`, `matches`, `errors`, and `time`.
+ * including the `StartModal`, `Header`, `Board`, and `Modal` components. The content displayed depends
+ * on the state values such as `isStartModalOpen`, `gameOver`, and the game progress (matches, errors,
+ * time).
  */
 
 import React, { useState, useEffect } from "react";
@@ -18,45 +18,45 @@ const App = () => {
   const [playerName, setPlayerName] = useState("");
   const [matches, setMatches] = useState(0);
   const [errors, setErrors] = useState(0);
-  const [gameOver, setGameOver] = useState(false);
-  const [isStartModalOpen, setIsStartModalOpen] = useState(false); 
-  const [time, setTime] = useState(0); 
-  const [isTimerRunning, setIsTimerRunning] = useState(false); 
- 
-/* The `useEffect` hook you provided is responsible for checking if there is a saved player name in the
-local storage. Here's a breakdown of what it does: */
+  const [gameOver, setGameOver] = useState(true);
+  const [isStartModalOpen, setIsStartModalOpen] = useState(false);
+  const [time, setTime] = useState(0);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [totalPairs, setTotalPairs] = useState(0);
+
+/* The `useEffect` hook in the provided code snippet is responsible for running a side effect when the
+component mounts for the first time. Here's a breakdown of what it does: */
   useEffect(() => {
     const savedName = localStorage.getItem("playerName");
     if (savedName) {
-      setPlayerName(savedName); 
+      setPlayerName(savedName);
+      setIsTimerRunning(true); 
     } else {
-      setIsStartModalOpen(true); 
+      setIsStartModalOpen(true);
     }
   }, []);
 
-
-/* The `useEffect` hook you provided is responsible for checking if the number of `matches` in the game
-has reached 10. Here's a breakdown of what it does: */
+/* The `useEffect` hook you provided is responsible for running a side effect when the dependencies
+`matches` and `totalPairs` change. Here's a breakdown of what it does: */
   useEffect(() => {
-    if (matches === 10) {
+    if (matches === totalPairs && totalPairs > 0) {
+      console.log("Juego terminado");
       setGameOver(true);
       setIsTimerRunning(false); 
     }
-  }, [matches]);
+  }, [matches, totalPairs]);
 
-
-/* This `useEffect` hook is responsible for managing the timer in the game. Here's a breakdown of what
-it does: */
-   useEffect(() => {
+/* The `useEffect` hook you provided is responsible for managing the timer functionality in the React
+application. Here's a breakdown of what it does: */
+  useEffect(() => {
     let interval;
     if (isTimerRunning) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 1); 
+        setTime((prevTime) => prevTime + 1);
       }, 1000);
     }
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [isTimerRunning]);
-
 
 /**
  * The `restartGame` function resets game variables and opens the start modal.
@@ -65,11 +65,10 @@ it does: */
     setMatches(0);
     setErrors(0);
     setGameOver(false);
-    setTime(0); 
-    setIsStartModalOpen(true); 
-    setIsTimerRunning(false); 
+    setTime(0);
+    setIsStartModalOpen(true);
+    setIsTimerRunning(false);
   };
-
 
 /**
  * The `handleStart` function sets the player's name, saves it to local storage, closes the start
@@ -78,36 +77,64 @@ it does: */
  */
   const handleStart = (name) => {
     setPlayerName(name);
-    localStorage.setItem("playerName", name); 
-    setIsStartModalOpen(false); 
-    setTime(0); 
-    setIsTimerRunning(true); 
+    localStorage.setItem("playerName", name);
+    setIsStartModalOpen(false);
+    setTime(0);
+    setIsTimerRunning(true);
+  };
+
+/**
+ * The `handleFinish` function resets various game-related states and opens the start modal.
+ */
+  const handleFinish = () => {
+    localStorage.removeItem("playerName");
+    setPlayerName("");
+    setIsStartModalOpen(true);
+    setMatches(0);
+    setErrors(0);
+    setTime(0);
+    setIsTimerRunning(false);
+    setGameOver(false);
+  };
+
+/**
+ * The function `updateTotalPairs` updates the total number of pairs.
+ * @param total - The `total` parameter in the `updateTotalPairs` function represents the total number
+ * of pairs that you want to update.
+ */
+  const updateTotalPairs = (total) => {
+    setTotalPairs(total);
   };
 
   return (
     <div className="app">
-      <div className="app-container">
-        {isStartModalOpen && <StartModal onStart={handleStart} />}
-        {!isStartModalOpen && (
-          <>
-            <Header
-              playerName={playerName}
-              matches={matches}
-              errors={errors}
-              time={time}
-            />
-            <Board setMatches={setMatches} setErrors={setErrors} />
-            <footer className="text-center p-5">
-              <p className="text-white fw-lighter">
-                Hecho con 💖 por Adriana Rosas
-              </p>
-            </footer>
-          </>
-        )}
-        {gameOver && (
-          <Modal playerName={playerName} time={time} onClose={restartGame} />
-        )}
-      </div>
+      {isStartModalOpen && <StartModal onStart={handleStart} />}
+
+      {!isStartModalOpen && (
+        <>
+          <Header
+            playerName={playerName}
+            matches={matches}
+            errors={errors}
+            time={time}
+            onFinish={handleFinish}
+          />
+          <Board
+            setMatches={setMatches}
+            setErrors={setErrors}
+            updateTotalPairs={updateTotalPairs}
+          />
+          <footer className="text-center p-5">
+            <p className="text-white fw-lighter">
+              Hecho con 💖 por Adriana Rosas
+            </p>
+          </footer>
+        </>
+      )}
+
+      {gameOver && (
+        <Modal playerName={playerName} time={time} onClose={restartGame} />
+      )}
     </div>
   );
 };

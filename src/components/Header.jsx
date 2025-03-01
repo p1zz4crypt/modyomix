@@ -1,15 +1,7 @@
-/**
- * The `Header` component in the provided code snippet displays player information, match statistics,
- * time, and shows a motivational emoji message based on errors.
- * @returns The `Header` component is being returned in the provided code snippet. It displays player
- * information such as name, matches, errors, and time. It also includes a feature that shows a
- * motivational emoji message when the number of errors is a multiple of 5. The component structure
- * includes HTML elements styled with Bootstrap classes and CSS for layout and design.
- */
 import React, { useState, useEffect } from "react";
 import "../estilos/estilos.css";
 
-const Header = ({ playerName, matches, errors, time }) => {
+const Header = ({ playerName, matches, errors, time, onFinish }) => {
   const [showEmoji, setShowEmoji] = useState(false);
 
 
@@ -40,7 +32,7 @@ message based on the number of errors. Here's a breakdown of what it does: */
   return (
     <header className="p-4 text-center d-flex justify-content-around align-items-center">
       <div className="mt-2">
-        <p>
+        <p className="text-capitalize">
           👾<b>Player:</b> {playerName}
         </p>
         <p>
@@ -51,10 +43,12 @@ message based on the number of errors. Here's a breakdown of what it does: */
           <p>
             ⏱️<b>Time:</b> {formatTime(time)}
           </p>
-          {/* Siempre renderiza el elemento, pero controla su visibilidad con la clase */}
           <p className={`emoji-transition ${showEmoji ? "show" : ""}`}>
             🤩 ¡Tú puedes, {playerName}!
           </p>
+          <div className="d-flex">
+          <button className="btn" onClick={onFinish}>Salir</button>
+          </div>
         </div>
       </div>
       <h1 className="font-bold">

@@ -7,7 +7,7 @@ import "../estilos/estilos.css";
 
 const StartModal = ({ onStart }) => {
   const [name, setName] = useState("");
-  const [currentWord, setCurrentWord] = useState("ModyoMix");
+  const [currentWord, setCurrentWord] = useState("Match😍");
   const [wordIndex, setWordIndex] = useState(0);
 
   const words = ["Mix😵‍💫", "Memory🤔", "Match😍"];
@@ -22,7 +22,7 @@ what it's doing: */
         setCurrentWord(words[newIndex]);
         return newIndex;
       });
-    }, 2000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, [words.length]);

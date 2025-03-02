@@ -2,8 +2,7 @@
 
 ¡Bienvenido a **ModyoMix**! Este es un juego de memoria clásico donde tu objetivo es encontrar todos los pares de animales en el menor tiempo posible y con la menor cantidad de errores. ¡Pon a prueba tu memoria y diviértete!
 
-Pruébalo aquí:
-[ModyoMix](https://p1zz4crypt.github.io/modyomix/)
+[ModyoMix](https://p1zz4crypt.github.io/modyomix/){:target="_blank"}{:rel="noopener noreferrer"} 🔗
 
 ---
 
@@ -59,7 +58,7 @@ Antes de comenzar a codificar, realicé una planeación detallada del proyecto e
 
 3. **Mecánica del Juego**:
 
-   - El jugador debe voltear dos cartas por turno.
+   - El jugador debe voltear las cartas para encontrar los pares.
    - Si las cartas coinciden, se suman **aciertos**.
    - Si no coinciden, se suman **errores** y las cartas se voltean de nuevo.
 
@@ -108,7 +107,7 @@ Sigue estos pasos para jugar:
 
 2. **Voltea las Cartas**:
 
-   - Haz clic en dos cartas para voltearlas.
+   - Haz clic en las cartas para voltearlas y hallar los pares.
    - Si las cartas coinciden, quedarán boca arriba.
    - Si no coinciden, se voltearán de nuevo después de un breve momento.
 
@@ -119,6 +118,10 @@ Sigue estos pasos para jugar:
 4. **Completa el Juego**:
    - Cuando encuentres todos los pares, se mostrará un mensaje de felicitación con tu tiempo final.
    - Puedes reiniciar el juego haciendo clic en "¡Otra vez!".
+
+
+   **También puedes probarlo directamente desde el link**:
+   👉[ModyoMix](https://p1zz4crypt.github.io/modyomix/){:target="_blank"}{:rel="noopener noreferrer"}👈
 
 ---
 

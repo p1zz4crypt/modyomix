@@ -15,19 +15,24 @@
 ## **Proceso de Desarrollo**
 
 ### **Planeación y Organización**
+
 Antes de comenzar a codificar, realicé una planeación detallada del proyecto en **Notion**. Esta herramienta me permitió organizar las tareas, definir los requisitos y establecer un cronograma para el desarrollo. Aquí hay una captura de pantalla de mi tablero de planeación:
 
 ![Planeación en Notion](./src/images/modyo-figma.png)
 
 ### **Pasos Seguidos**
+
 1. **Análisis del Requerimiento**:
+
    - Leí y comprendí los requisitos del proyecto, identificando las funcionalidades clave (juego de memoria, temporizador, persistencia del nombre, etc.).
    - Definí los componentes principales: `Header`, `Board`, `Modal`, `StartModal`.
 
 2. **Diseño de la Interfaz**:
-   - Decidí usar **Bootstrap** y  para los estilos.
+
+   - Decidí usar **Bootstrap** y para los estilos.
 
 3. **Desarrollo del Código**:
+
    - Implementé la lógica del juego en React, utilizando estados y efectos para manejar el flujo del juego.
    - Integré la API de animales para obtener las imágenes de las cartas.
    - Añadí un temporizador y un sistema de persistencia del nombre usando `localStorage`.
@@ -37,6 +42,7 @@ Antes de comenzar a codificar, realicé una planeación detallada del proyecto e
    - Aseguré que el enlace de despliegue funcionara correctamente.
 
 ### **Herramientas Utilizadas**
+
 - **Notion**: Para la planeación y organización del proyecto.
 - **React**: Para el desarrollo de la lógica y los componentes.
 - **Bootstrap**: Para los estilos y el diseño responsivo.
@@ -119,9 +125,9 @@ Sigue estos pasos para jugar:
    - Cuando encuentres todos los pares, se mostrará un mensaje de felicitación con tu tiempo final.
    - Puedes reiniciar el juego haciendo clic en "¡Otra vez!".
 
+## **También puedes probarlo directamente desde el link**:
 
-   **También puedes probarlo directamente desde el link**:
-   👉[ModyoMix](https://p1zz4crypt.github.io/modyomix/)👈
+👉[ModyoMix](https://p1zz4crypt.github.io/modyomix/)👈
 
 ---
 
@@ -144,11 +150,10 @@ npm install
 ```
 
 3. **Ejecuta el proyecto**:
+
 ```bash
 npm start
 ```
-
-
 
 ---
 

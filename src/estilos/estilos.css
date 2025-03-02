@@ -39,20 +39,19 @@ header p {
   text-align: left;
 }
 .emoji-transition {
-  opacity: 0; 
+  opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; 
-  font-weight: bold; 
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  font-weight: bold;
 }
 
 .emoji-transition.show {
-  opacity: 1; 
-  visibility: visible; 
+  opacity: 1;
+  visibility: visible;
 }
 /* Board */
 .board {
   width: 90%;
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
@@ -68,6 +67,10 @@ header p {
   aspect-ratio: 1;
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
+  -webkit-transition: transform 0.6s ease;
+  -moz-transition: transform 0.6s ease;
+  -ms-transition: transform 0.6s ease;
+  -o-transition: transform 0.6s ease;
 }
 
 .card.flipped {
@@ -152,7 +155,7 @@ header p {
   transition: all 0.3s ease 0s;
   cursor: pointer;
 }
-.btn-out{
+.btn-out {
   border: transparent !important;
 }
 
@@ -184,19 +187,26 @@ header p {
     transform: perspective(400px) rotateX(0deg);
   }
 }
-.modal--wrapper{
-  width: 1200px;
+.modal--wrapper {
+  width: clamp(300px, 80vw, 1200px);
   display: flex;
+  margin: 20px 0;
 }
-.modal--wrapper h1{
-  font-size: 6rem !important;
+@media (max-width: 768px) {
+  .modal--wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-.modal--wrapper h2{
+.modal--wrapper h1 {
+  font-size: clamp(3rem, 2vw, 6rem) !important;
+}
+.modal--wrapper h2 {
   font-weight: bold !important;
+  font-size: clamp(3rem, 2vw, 6rem);
 }
-.modal--wrapper h1:nth-of-type(1){
+.modal--wrapper h1:nth-of-type(1) {
   font-weight: lighter;
   width: 50%;
   text-align: right;
 }
-

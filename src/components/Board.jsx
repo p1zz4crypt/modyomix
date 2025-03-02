@@ -72,7 +72,7 @@ when the component mounts. Here's a breakdown of what it does: */
 
   return (
     <>
-      <div className="board grid grid-cols-4 gap-4 p-4">
+      <div className="board grid grid-cols-10 gap-10 p-4">
         {cards.map((card, index) => (
           <div
             key={card.id}

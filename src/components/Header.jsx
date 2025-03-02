@@ -43,15 +43,15 @@ message based on the number of errors. Here's a breakdown of what it does: */
           <p>
             ⏱️<b>Time:</b> {formatTime(time)}
           </p>
-          <p className={`emoji-transition ${showEmoji ? "show" : ""}`}>
-            🤩 ¡Tú puedes, {playerName}!
-          </p>
+          <div className={`emoji-transition ${showEmoji ? "show" : ""}`}>
+           <p>🤩 ¡Tú puedes, {playerName}!</p> 
+          </div>
           <div className="d-flex">
-          <button className="btn" onClick={onFinish}>Salir</button>
+          <button className="btn btn-out" onClick={onFinish}>Salir</button>
           </div>
         </div>
       </div>
-      <h1 className="font-bold">
+      <h1 className="fw-lighter">
         Modyo<b>Mix</b>
       </h1>
     </header>

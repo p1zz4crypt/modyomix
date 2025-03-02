@@ -33,11 +33,7 @@ Antes de comenzar a codificar, realicé una planeación detallada del proyecto e
    - Integré la API de animales para obtener las imágenes de las cartas.
    - Añadí un temporizador y un sistema de persistencia del nombre usando `localStorage`.
 
-4. **Pruebas y Depuración**:
-   - Realicé pruebas manuales para asegurarme de que todas las funcionalidades funcionaran correctamente.
-   - Corregí errores relacionados con el volteo de cartas y la persistencia del nombre.
-
-5. **Despliegue**:
+4. **Despliegue**:
    - Configuré GitHub Pages para desplegar la aplicación.
    - Aseguré que el enlace de despliegue funcionara correctamente.
 
@@ -159,6 +155,7 @@ npm start
 - **Dificultades**: Añadir niveles de dificultad (más cartas, menos tiempo, etc.).
 - **Sonidos**: Incorporar efectos de sonido al voltear cartas y al ganar.
 - **Animaciones**: Mejorar las animaciones de volteo de cartas y transiciones.
+- **Uso de Redux**: Al integrar más funciones requeriría el uso de Redux para un estado global compartido.
 
 ---
 

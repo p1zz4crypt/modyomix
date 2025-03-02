@@ -23,7 +23,7 @@ const Modal = ({ playerName, time, onClose }) => {
   };
 
   return (
-    <div className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+    <div className="position-fixed bg-dark bg-gradient top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
     <div className="p-5 bg-white rounded shadow text-center">
       <h2 className="fs-1 fw-bold">¡Bien hecho, {playerName} 🎉!</h2>
       <p className="mt-2">Completaste el desafío en: ⏱️ {formatTime(time)} minutos.</p>

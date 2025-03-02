@@ -10,9 +10,9 @@ const StartModal = ({ onStart }) => {
   const [currentWord, setCurrentWord] = useState("ModyoMix");
   const [wordIndex, setWordIndex] = useState(0);
 
-  const words = ["ModyoMix", "Memoria", "Diversión", "Reto"];
+  const words = ["Mix😵‍💫", "Memory🤔", "Match😍"];
 
-/* The `useEffect` hook in the provided code snippet is setting up a timer interval that updates the
+  /* The `useEffect` hook in the provided code snippet is setting up a timer interval that updates the
 `currentWord` state every 2 seconds with a new word from the `words` array. Here's a breakdown of
 what it's doing: */
   useEffect(() => {
@@ -22,15 +22,15 @@ what it's doing: */
         setCurrentWord(words[newIndex]);
         return newIndex;
       });
-    }, 2000); 
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [words.length]);
 
-/**
- * The `handleStart` function checks if the `name` variable is not empty or only whitespace before
- * calling the `onStart` function with the `name` parameter.
- */
+  /**
+   * The `handleStart` function checks if the `name` variable is not empty or only whitespace before
+   * calling the `onStart` function with the `name` parameter.
+   */
   const handleStart = () => {
     if (name.trim()) {
       onStart(name);
@@ -47,12 +47,13 @@ what it's doing: */
               alt="logo"
             />
           </div>
-          <div className="wrapper">
+          <div className="modal--wrapper">
+            <h1>Modyo</h1>
             <h1 className="font-bold flip">{currentWord}</h1>
           </div>
           <p className="fs-5 text">
-          Voltea las cartas, encuentra los pares de animales y diviértete. <br /> ¡Cuidado con los errores, te harán
-            perder el ritmo!
+            Voltea las cartas, encuentra los pares de animales y diviértete.{" "}
+            <br /> ¡Cuidado con los errores, te harán perder el ritmo!
           </p>
           <input
             type="text"

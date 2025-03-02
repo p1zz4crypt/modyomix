@@ -18,7 +18,7 @@ const App = () => {
   const [playerName, setPlayerName] = useState("");
   const [matches, setMatches] = useState(0);
   const [errors, setErrors] = useState(0);
-  const [gameOver, setGameOver] = useState(true);
+  const [gameOver, setGameOver] = useState(false);
   const [isStartModalOpen, setIsStartModalOpen] = useState(false);
   const [time, setTime] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
@@ -112,6 +112,7 @@ application. Here's a breakdown of what it does: */
 
       {!isStartModalOpen && (
         <>
+        
           <Header
             playerName={playerName}
             matches={matches}
